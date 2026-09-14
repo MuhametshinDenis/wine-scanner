@@ -1,0 +1,14 @@
+{
+  "name": "ml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "uv run ml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MuhametshinDenis/wine-scanner.git"
+  },
+  "private": true
+}
