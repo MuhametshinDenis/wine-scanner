@@ -1,14 +1,25 @@
 {
-  "name": "$name$",
-  "version": "$version$",
-  "description": "$END$",
-  "main": "$main$",
+  "name": "tunnel",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/main.ts"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/MuhametshinDenis/wine-scanner.git"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@types/http-proxy": "^1.17.17",
+    "@types/node": "^26.5.1",
+    "dotenv": "^17.4.2",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@ngrok/ngrok": "^1.7.0",
+    "http-proxy": "^1.18.1"
+  }
 }

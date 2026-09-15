@@ -1,0 +1,34 @@
+name: wine-scanner
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "${DATABASE_PORT}:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DATABASE_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - wine-scanner-database:/data/db
+    networks:
+      - wine-scanner-network
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'mongosh --quiet --eval "db.adminCommand({ ping: 1 }).ok" | grep 1'
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+volumes:
+  wine-scanner-database:
+    name: wine-scanner-database
+    driver: local
+networks:
+  wine-scanner-network:
+    name: wine-scanner-network
+    driver: bridge
