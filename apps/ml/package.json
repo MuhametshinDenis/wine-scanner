@@ -1,7 +1,0 @@
-{
-  "name": "ml",
-  "private": true,
-  "scripts": {
-    "dev": "uv run ml"
-  }
-}
